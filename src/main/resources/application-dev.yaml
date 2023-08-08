@@ -1,0 +1,16 @@
+# SPRING PROPERTIES
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/
+      database: local
+
+server:
+  error:
+    include-message: always
+
+bucket:
+  region:
+  s3:
+  path:
+  duration: 
