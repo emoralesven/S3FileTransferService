@@ -41,7 +41,7 @@ public class AmazonS3Client {
     @PostConstruct
     public void init() {
         log.info("Initializing S3 client");
-        AwsBasicCredentials awsCredentials = AwsBasicCredentials.create("AKIAWUQAQIKDNDBN4CLA", "blsjD2LgXE5eYEpoZaBhK9dWeqreiXMflA4S8XE7");
+        AwsBasicCredentials awsCredentials = AwsBasicCredentials.create("", "");
         this.s3 = S3Client.builder()
                 .credentialsProvider(StaticCredentialsProvider.create(awsCredentials))
                 .region(Region.of(awsRegion))
