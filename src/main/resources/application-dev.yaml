@@ -10,7 +10,9 @@ server:
     include-message: always
 
 bucket:
-  region:
-  s3:
-  path:
-  duration: 
+  region: "us-east-1"
+  s3: "emoralesinvoice"
+  path: "pdf"
+  duration: '30'
+  credentialId: 'AKIAWUQAQIKDNDBN4CLA'
+  secretId: 'blsjD2LgXE5eYEpoZaBhK9dWeqreiXMflA4S8XE7'
