@@ -34,6 +34,10 @@ public class AmazonS3Client {
     private String awsPath;
     @Value("${bucket.duration}")
     private String duration;
+    @Value("${bucket.credentialId}")
+    private String credentialId;
+    @Value("${bucket.secretId}")
+    private String secretId;
     private S3Client s3;
     private  S3Presigner presigner;
 
@@ -41,7 +45,7 @@ public class AmazonS3Client {
     @PostConstruct
     public void init() {
         log.info("Initializing S3 client");
-        AwsBasicCredentials awsCredentials = AwsBasicCredentials.create("", "");
+        AwsBasicCredentials awsCredentials = AwsBasicCredentials.create(credentialId, secretId);
         this.s3 = S3Client.builder()
                 .credentialsProvider(StaticCredentialsProvider.create(awsCredentials))
                 .region(Region.of(awsRegion))

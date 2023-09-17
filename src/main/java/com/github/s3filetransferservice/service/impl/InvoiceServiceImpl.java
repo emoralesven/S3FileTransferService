@@ -2,6 +2,7 @@ package com.github.s3filetransferservice.service.impl;
 
 import com.github.s3filetransferservice.client.AmazonS3Client;
 import com.github.s3filetransferservice.dto.InvoiceDTO;
+import com.github.s3filetransferservice.dto.RecGenericContact;
 import com.github.s3filetransferservice.dto.exception.FaultTO;
 import com.github.s3filetransferservice.exception.InvoiceException;
 import com.github.s3filetransferservice.model.Invoice;
@@ -51,7 +52,6 @@ public class InvoiceServiceImpl implements InvoiceService {
         saveOrUpdate(invoice);
         Map<String, Object> response = createResponseUploadFile();
         log.info("Ended uploadFile");
-
         return ResponseEntity.ok(response);
     }
 
